@@ -6,9 +6,9 @@ load_dotenv()
 
 OWNER          = os.getenv('OWNER')
 REPO           = os.getenv('REPO')
-TIER           = os.getenv('TIER')
-CO_AUTOR       = os.getenv('CO_AUTOR')
-CO_AUTOR_EMAIL = os.getenv('CO_AUTOR_EMAIL')
+TIER           = int(os.getenv('TIER'))
+CO_AUTHOR       = os.getenv('CO_AUTHOR')
+CO_AUTHOR_EMAIL = os.getenv('CO_AUTHOR_EMAIL')
 
 def main():
     for it in range(TIER):
