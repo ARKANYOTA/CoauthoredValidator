@@ -12,13 +12,12 @@ CO_AUTHOR       = os.getenv('CO_AUTHOR')
 CO_AUTHOR_EMAIL = os.getenv('CO_AUTHOR_EMAIL')
 
 def main():
-    os.system("git checkout -b newbranch")
     for it in range(TIER):
+        os.system(f"git checkout -b newbranch{it}of{TIER}")
         TextData = f'Iteration n°{it} of {TIER} \n\nCo-authored-by: {CO_AUTHOR} <{CO_AUTHOR_EMAIL}>'
         os.system(f'git commit --allow-empty -m "{TextData}"')	
-    os.system('git push --set-upstream origin newbranch')
-    os.system("git switch main")
-    os.system("git branch --delete newbranch")
+        os.system('git push --set-upstream origin {it}of{TIER}')
+        os.system("git switch main")
 
 
 if __name__ == "__main__":
